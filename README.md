@@ -31,6 +31,25 @@ Beautifully designed _Nuxt Content_ template built with _shadcn-vue_. **Customiz
   npm run dev
   ```
 
+## In container
+
+### Development
+
+  ```bash
+    docker run -it --rm -p 3000:3000 -u 1000:1000 -v ${PWD}:/front -w /front node:lts-bookworm bash
+    ```
+
+### Post dev
+
+  ```bash
+    docker compose up
+    ```
+
+1. `HOST_PORT` env should be used for porting the port on the host
+1. Before create a image, clean git repo from local files: ( `git clean -xdn && git clean -xdf`)
+
+**TODO**: make entrypoint be rather like create a version for deployment rather then _run dev_.
+
 ## Contributing
 
 1. Clone this repository.
